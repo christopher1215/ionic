@@ -354,7 +354,7 @@ export function updateContainerSize(s: Slides, plt: Platform) {
 }
 
 export function updateSlidesSize(s: Slides, plt: Platform) {
-  s._slides = (<any>s._wrapper.querySelectorAll('.' + CLS.slide));
+  s._slides = (<any>s._wrapper.querySelectorAll(':scope.' + CLS.slide));
   s._snapGrid = [];
   s._slidesGrid = [];
   s._slidesSizesGrid = [];
@@ -655,7 +655,7 @@ function createLoop(s: Slides) {
     ele.parentElement.removeChild(ele);
   });
 
-  var slides: SlideElement[] = <any>s._wrapper.querySelectorAll('.' + CLS.slide);
+  var slides: SlideElement[] = <any>s._wrapper.querySelectorAll(':scope.' + CLS.slide);
 
   if (s.slidesPerView === 'auto' && !s.loopedSlides) {
     s.loopedSlides = slides.length;
